@@ -1,0 +1,38 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"chassis" [label="chassis"];
+"left_steering_link" [label="left_steering_link"];
+"left_front_axle_carrier" [label="left_front_axle_carrier"];
+"left_front_wheel" [label="left_front_wheel"];
+"left_rear_axle_carrier" [label="left_rear_axle_carrier"];
+"left_rear_wheel" [label="left_rear_wheel"];
+"right_steering_link" [label="right_steering_link"];
+"right_front_axle_carrier" [label="right_front_axle_carrier"];
+"right_front_wheel" [label="right_front_wheel"];
+"right_rear_axle_carrier" [label="right_rear_axle_carrier"];
+"right_rear_wheel" [label="right_rear_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_link_to_chassis" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_link_to_chassis" -> "chassis"
+"chassis" -> "left_front_shock" [label="xyz: 0.1675 0.1525 -0.0235 \nrpy: 0 -0 0"]
+"left_front_shock" -> "left_steering_link"
+"left_steering_link" -> "left_steering_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"left_steering_joint" -> "left_front_axle_carrier"
+"left_front_axle_carrier" -> "left_front_axle" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"left_front_axle" -> "left_front_wheel"
+"chassis" -> "left_rear_shock" [label="xyz: -0.1675 0.1525 -0.0235 \nrpy: 0 -0 0"]
+"left_rear_shock" -> "left_rear_axle_carrier"
+"left_rear_axle_carrier" -> "left_rear_axle" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"left_rear_axle" -> "left_rear_wheel"
+"chassis" -> "right_front_shock" [label="xyz: 0.1675 -0.1525 -0.0235 \nrpy: 0 -0 0"]
+"right_front_shock" -> "right_steering_link"
+"right_steering_link" -> "right_steering_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"right_steering_joint" -> "right_front_axle_carrier"
+"right_front_axle_carrier" -> "right_front_axle" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"right_front_axle" -> "right_front_wheel"
+"chassis" -> "right_rear_shock" [label="xyz: -0.1675 -0.1525 -0.0235 \nrpy: 0 -0 0"]
+"right_rear_shock" -> "right_rear_axle_carrier"
+"right_rear_axle_carrier" -> "right_rear_axle" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"right_rear_axle" -> "right_rear_wheel"
+}

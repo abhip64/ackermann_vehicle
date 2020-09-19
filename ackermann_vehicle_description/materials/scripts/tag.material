@@ -1,0 +1,15 @@
+material vrc/asphalt
+{
+	technique
+	{
+		pass
+		{
+
+			texture_unit
+			{
+				texture tag16_05_00007.png
+				scale 0.1 0.1
+			}
+		}
+	}
+}
